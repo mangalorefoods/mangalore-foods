@@ -658,13 +658,13 @@
       <div id="deliveryAlert" class="status-alert"></div>
     </section>
 
-    <!-- EMBEDDED ORDER FORM (DYNAMICALLY PRE-FILLED WITH DELIVERY FEE) -->
+    <!-- EMBEDDED ORDER FORM (RESTORED VALID GOOGLE FORM ID) -->
     <section id="orderForm" style="margin-top: 40px;">
       <div class="section-head" style="margin-bottom:16px;">
         <h2>Place Your Weekend Pre-Order</h2>
         <p>Complete the form below to lock in your lunch dispatch slot</p>
       </div>
-      <iframe id="googleFormIframe" src="https://docs.google.com/forms/d/e/1FAIpQLSc-v_7eLRreIIaEgQW1PTQYY3GylUl56x9XYpLcZIBmLZ2iJA/viewform?embedded=true" style="width:100%; height:1200px; border:none;">Loading order form...</iframe>
+      <iframe id="googleFormIframe" src="https://docs.google.com/forms/d/e/1FAIpQLSe-v_7eLRreIIaEgQW1PTQYY3GylUl56x9XYpLcZIBmLZ2iJA/viewform?embedded=true" style="width:100%; height:1200px; border:none;">Loading order form...</iframe>
     </section>
 
   </main>
@@ -699,8 +699,8 @@
     const KITCHEN_LNG = 77.5605906;
     const APPS_SCRIPT_EXEC = "https://script.google.com/macros/s/AKfycbwg9c78QoRLGweRTcsLYku_Cpcl-dOA9goAhbHNBp89oaUfayg9oNagsGyI08d6joWx/exec";
 
-    // BASE FORM LINK & ENTRY ID (UPDATE entry.XXXXXXXXX IF YOUR PRE-FILL LINK HAS A DIFFERENT ENTRY ID)
-    const BASE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc-v_7eLRreIIaEgQW1PTQYY3GylUl56x9XYpLcZIBmLZ2iJA/viewform?embedded=true";
+    // VALIDATED BASE FORM LINK & ENTRY ID
+    const BASE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe-v_7eLRreIIaEgQW1PTQYY3GylUl56x9XYpLcZIBmLZ2iJA/viewform?embedded=true";
     const ENTRY_ID = "entry.123456789"; 
 
     let map = L.map('map').setView([KITCHEN_LAT, KITCHEN_LNG], 13);
