@@ -9,6 +9,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
   <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
 
+  <!-- LEAFLET MAP CSS (FREE OPENSTREETMAP INTERFACE) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
   <!-- GOOGLE ANALYTICS 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYKV46ZYHP"></script>
   <script>
@@ -27,41 +30,6 @@
   <meta name="description" content="Authentic Mangalorean Chicken Ghee Roast, Kori Gassi, Anjal Fry, Neer Dosa, and coastal specials operating out of Mathikere, Bangalore. Weekend lunch delivery pre-orders.">
   <meta name="keywords" content="Mangalore Foods, Mangalorean food Mathikere, Coastal food delivery Bangalore, Chicken Sukka Mathikere, Kori Gassi, Anjal Fry Bangalore">
   <meta name="robots" content="index, follow">
-
-  <!-- SOCIAL MEDIA PREVIEW IMAGE -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mangalorefoods.github.io/mangalore-foods/">
-  <meta property="og:title" content="Mangalore Foods — Authentic Coastal Specials in Mathikere, Bangalore">
-  <meta property="og:description" content="Freshly prepared Mangalorean dishes delivered every Saturday & Sunday lunch from Mathikere, Bangalore.">
-  <meta property="og:image" content="og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mangalore Foods — Authentic Coastal Specials in Mathikere">
-  <meta name="twitter:description" content="Freshly prepared Mangalorean dishes delivered every Saturday & Sunday lunch from Mathikere, Bangalore.">
-  <meta name="twitter:image" content="og-image.jpg">
-
-  <!-- LOCAL BUSINESS SCHEMA -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Restaurant",
-    "name": "Mangalore Foods",
-    "description": "Authentic Mangalorean & Coastal Food Pre-Order Service",
-    "servesCuisine": "Mangalorean, Coastal Indian",
-    "priceRange": "₹₹",
-    "email": "namma.mangalorefoods@gmail.com",
-    "telephone": "+918310229876",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Mathikere",
-      "addressRegion": "Bangalore",
-      "addressCountry": "IN"
-    },
-    "openingHours": "Sa,Su 12:00-14:00"
-  }
-  </script>
 
   <style>
     :root {
@@ -146,14 +114,6 @@
     }
     .nav-btn:hover { background: #ffffff; }
 
-    @media (max-width: 600px) {
-      .nav-container { padding: 6px 14px; }
-      .brand-logo-img { height: 38px; max-width: 48px; }
-      .brand-title { font-size: 17px; }
-      .brand-tagline-sub { font-size: 9px; }
-      .nav-btn { padding: 6px 14px; font-size: 12px; }
-    }
-
     .hero {
       background: linear-gradient(135deg, rgba(0,43,73,0.92), rgba(183,28,28,0.85)), url('https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
       color: #ffffff;
@@ -203,18 +163,6 @@
       transition: all 0.2s ease;
     }
     .btn-primary:hover { background: #ffffff; transform: translateY(-2px); }
-    .btn-secondary {
-      background: rgba(255,255,255,0.15);
-      color: #ffffff;
-      border: 1px solid rgba(255,255,255,0.4);
-      font-size: 16px;
-      font-weight: 700;
-      padding: 14px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    .btn-secondary:hover { background: rgba(255,255,255,0.25); }
 
     .schedule-bar {
       background: var(--primary-dark);
@@ -247,8 +195,8 @@
       color: var(--primary);
       margin: 0 0 8px 0;
     }
-    .section-head p { color: var(--muted); font-size: 15px; margin: 0; }
 
+    /* MENU SECTION */
     .menu-category-title {
       font-family: Georgia, serif;
       font-size: 20px;
@@ -270,10 +218,7 @@
       display: flex;
       flex-direction: column;
       border-left: 5px solid var(--accent);
-      transition: transform 0.2s ease;
     }
-    .dish-card-veg { border-left: 5px solid var(--veg); }
-    .dish-card:hover { transform: translateY(-3px); }
     .dish-body {
       padding: 20px;
       display: flex;
@@ -292,171 +237,49 @@
       color: var(--primary);
       margin: 0;
     }
-
-    .indicator-nonveg {
-      width: 14px;
-      height: 14px;
-      border: 1px solid var(--nonveg);
-      padding: 2px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .indicator-nonveg::after {
-      content: "";
-      width: 6px;
-      height: 6px;
-      background: var(--nonveg);
-      border-radius: 50%;
-    }
-    .indicator-veg {
-      width: 14px;
-      height: 14px;
-      border: 1px solid var(--veg);
-      padding: 2px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .indicator-veg::after {
-      content: "";
-      width: 6px;
-      height: 6px;
-      background: var(--veg);
-      border-radius: 50%;
-    }
-
     .dish-desc {
       font-size: 13px;
       color: var(--muted);
       margin: 0 0 16px 0;
-      flex-grow: 1;
-      line-height: 1.5;
     }
-    .dish-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: auto;
-      padding-top: 12px;
-      border-top: 1px dashed var(--border);
-    }
-    .order-item-btn {
-      background: var(--primary);
-      color: #ffffff;
-      text-decoration: none;
-      padding: 8px 22px;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: bold;
-      transition: background 0.2s ease;
-      margin-left: auto;
-    }
-    .order-item-btn:hover { background: var(--accent); }
 
-    .story-section {
+    /* MAP & DELIVERY CALCULATOR BOX */
+    .delivery-box {
       background: #ffffff;
       border-radius: 16px;
-      padding: 40px 30px;
-      margin: 50px 0;
-      border: 1px solid var(--border);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    }
-    .story-content h3 {
-      font-family: Georgia, serif;
-      font-size: 24px;
-      color: var(--primary);
-      margin-top: 0;
-    }
-    .story-content p {
-      font-size: 14px;
-      color: #4a5568;
-      line-height: 1.7;
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .trust-card {
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      text-align: center;
-    }
-    .trust-icon { font-size: 30px; margin-bottom: 10px; display: inline-block; }
-    .trust-card h4 { margin: 0 0 6px 0; color: var(--primary); font-size: 16px; }
-    .trust-card p { margin: 0; font-size: 12px; color: var(--muted); }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      text-align: center;
-    }
-    .step-card {
-      background: #ffffff;
-      padding: 24px 16px;
-      border-radius: 12px;
-      border-top: 4px solid var(--gold);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-    }
-    .step-num {
-      width: 36px;
-      height: 36px;
-      background: var(--primary);
-      color: var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      margin: 0 auto 12px auto;
-    }
-    .step-card h4 { margin: 0 0 8px 0; color: var(--primary); }
-    .step-card p { margin: 0; font-size: 13px; color: var(--muted); }
-
-    .form-wrapper {
-      background: #ffffff;
-      border-radius: 16px;
+      padding: 24px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      padding: 24px 12px;
+      border: 1px solid var(--border);
       margin: 40px 0;
+    }
+    #map {
+      height: 280px;
+      width: 100%;
+      border-radius: 10px;
+      margin: 16px 0;
       border: 1px solid var(--border);
     }
-    iframe { width: 100%; height: 1250px; border: none; }
-
-    .faq-item {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      margin-bottom: 12px;
-      padding: 16px 20px;
-    }
-    .faq-item h4 { margin: 0 0 6px 0; color: var(--primary); font-size: 16px; }
-    .faq-item p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
+    .map-btn {
+      background: var(--primary);
       color: #ffffff;
-      padding: 12px 20px;
-      border-radius: 30px;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
       font-weight: bold;
-      font-size: 14px;
-      text-decoration: none;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      cursor: pointer;
+      font-size: 13px;
     }
+    .map-btn:hover { background: var(--accent); }
+    .status-alert {
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: 12px;
+      display: none;
+    }
+    .status-success { background: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+    .status-error { background: #ffebee; color: #c62828; border: 1px solid #ffcdd2; }
 
     footer {
       background: var(--primary-dark);
@@ -476,31 +299,6 @@
     .footer-col ul { list-style: none; padding: 0; margin: 0; }
     .footer-col ul li { margin-bottom: 8px; }
     .footer-col a { color: #cbd5e0; text-decoration: none; }
-    .footer-col a:hover { color: #ffffff; }
-
-    .social-links-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .social-link-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.08);
-      padding: 8px 14px;
-      border-radius: 6px;
-      color: #ffffff !important;
-      font-weight: 600;
-      font-size: 12px;
-      transition: background 0.2s ease;
-      width: fit-content;
-    }
-    .social-link-item:hover { background: rgba(255,255,255,0.18); }
-    .social-icon-wa { color: #25d366; }
-    .social-icon-ig { color: #e1306c; }
-    .social-icon-yt { color: #ff0000; }
-
     .footer-bottom {
       max-width: 1000px;
       margin: 0 auto;
@@ -513,7 +311,7 @@
 </head>
 <body>
 
-  <!-- NAVIGATION HEADER -->
+  <!-- HEADER -->
   <header class="nav-header">
     <div class="nav-container">
       <a href="#" class="brand-logo">
@@ -523,25 +321,24 @@
           <p class="brand-tagline-sub">Mathikere, Bangalore</p>
         </div>
       </a>
-      <a href="#orderForm" class="nav-btn">Order Now</a>
+      <a href="#deliveryCalculator" class="nav-btn">Check Delivery</a>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section class="hero">
     <span class="hero-badge">Weekend Cloud Kitchen — Mathikere, Bangalore</span>
     <h1>A Taste That Takes You Home</h1>
     <p class="hero-subtitle">Authentic, home-style Mangalorean specialties slow-cooked with traditional spices. Freshly prepared for your weekend family lunch.</p>
     <div class="hero-ctas">
       <a href="#orderForm" class="btn-primary">🍲 Order Weekend Lunch</a>
-      <a href="#menu" class="btn-secondary">Explore Menu</a>
     </div>
   </section>
 
-  <!-- LUNCH-ONLY OPERATING SCHEDULE BAR -->
+  <!-- SCHEDULE BAR -->
   <div class="schedule-bar">
     <div class="schedule-container">
-      <div class="schedule-item">📍 Kitchen Location: <span>Mathikere, Bangalore</span></div>
+      <div class="schedule-item">📍 Dispatch Location: <span>Mathikere, Bangalore</span></div>
       <div class="schedule-item">📅 Days: <span>Saturday & Sunday</span></div>
       <div class="schedule-item">🕛 Lunch Slot: <span>12:00 PM – 2:00 PM</span></div>
     </div>
@@ -549,354 +346,29 @@
 
   <main class="container">
 
-    <!-- MENU SECTION -->
-    <section id="menu">
-      <div class="section-head">
-        <h2>This Weekend's Menu</h2>
-        <p>Pre-order before Friday 6:00 PM for Saturday lunch, or Saturday 6:00 PM for Sunday lunch.</p>
+    <!-- SMART DELIVERY ZONE & MAP CALCULATOR -->
+    <section id="deliveryCalculator" class="delivery-box">
+      <div class="section-head" style="margin-bottom:16px;">
+        <h2>Select Delivery Location</h2>
+        <p>Drag the pin on the map or click "Use Current Location" to check serviceability from Mathikere</p>
       </div>
 
-      <!-- CHICKEN SPECIALS -->
-      <h3 class="menu-category-title">Chicken Specials</h3>
-      <div class="menu-grid">
+      <button class="map-btn" onclick="locateUser()">📍 Detect My Location</button>
+      <div id="map"></div>
 
-        <div class="dish-card">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Kori Gassi</h3>
-              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Authentic Mangalorean chicken curry simmered in fresh coconut milk, Byadgi chillies, and coastal herbs.</p>
-            <div class="dish-footer">
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="dish-card">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Kundapur Chicken Curry</h3>
-              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Aromatic regional curry prepared with slow-roasted spices and traditional Kundapur masala blend.</p>
-            <div class="dish-footer">
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="dish-card">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Chicken Sukka</h3>
-              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Tender chicken morsels slow-cooked with fresh roasted grated coconut and coastal spices.</p>
-            <div class="dish-footer">
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="dish-card">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Mangalorean Chicken Curry</h3>
-              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Homestyle chicken curry cooked with roasted spices, garlic, and coconut gravy.</p>
-            <div class="dish-footer">
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="dish-card">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Chicken Ghee Roast</h3>
-              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Fiery, succulent chicken pieces slow-cooked in pure ghee and stone-ground red masala.</p>
-            <div class="dish-footer">
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- FISH CURRIES -->
-      <h3 class="menu-category-title">Fish Curries</h3>
-      <div class="menu-grid">
-
-        <div class="dish-card">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Mangalorean Fish Curry</h3>
-              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Fresh catch cooked in tangy, spiced coconut gravy infused with raw tamarind and coriander.</p>
-            <div class="dish-footer">
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="dish-card">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Bangda Curry (Mackerel)</h3>
-              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Traditional mackerel fish curry prepared in red coconut masala and coastal herbs.</p>
-            <div class="dish-footer">
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="dish-card">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Buthai Curry (Sardine)</h3>
-              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Classic coastal sardine fish curry simmered with spicy, sour coconut gravy.</p>
-            <div class="dish-footer">
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- FISH FRY -->
-      <h3 class="menu-category-title">Fish Fry (Tawa Specials)</h3>
-      <div class="menu-grid">
-
-        <div class="dish-card">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Anjal Fry (Kingfish)</h3>
-              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Fresh King Fish slice marinated in signature red masala and shallow roasted on a tawa.</p>
-            <div class="dish-footer">
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="dish-card">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Bangda Fry (Mackerel)</h3>
-              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Fresh Mackerel coated with spicy rava and roasted until crisp on the outside.</p>
-            <div class="dish-footer">
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="dish-card">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Kane Fry (Ladyfish)</h3>
-              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Delicate Ladyfish pan-roasted with spicy Byadgi masala coating.</p>
-            <div class="dish-footer">
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="dish-card">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Pomfret Fry</h3>
-              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Whole Pomfret fish coated in coastal spices and shallow roasted to perfection.</p>
-            <div class="dish-footer">
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ACCOMPANIMENTS & SIDES -->
-      <h3 class="menu-category-title">Accompaniments & Sides</h3>
-      <div class="menu-grid">
-
-        <div class="dish-card dish-card-veg">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Neer Dosa (Set of 5)</h3>
-              <div class="indicator-veg" title="Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Paper-thin, delicate rice crepes. The classic pairing for chicken and fish curries.</p>
-            <div class="dish-footer">
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="dish-card dish-card-veg">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Boiled Red Rice (Portion)</h3>
-              <div class="indicator-veg" title="Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Nutritious, traditional Mangalorean boiled rice served warm.</p>
-            <div class="dish-footer">
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="dish-card dish-card-veg">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Appam (Set of 2)</h3>
-              <div class="indicator-veg" title="Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Soft, fluffy lace hoppers with crispy edges, cooked fresh for your meal.</p>
-            <div class="dish-footer">
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="dish-card dish-card-veg">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Shavige (Boiled Rice Noodle 200g)</h3>
-              <div class="indicator-veg" title="Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Handcrafted rice noodles, steamed soft and ideal for soaking up curries.</p>
-            <div class="dish-footer">
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- BRAND STORY -->
-    <section class="story-section">
-      <div class="story-content">
-        <h3>A Taste of Home in Mathikere</h3>
-        <p>Growing up in coastal Karnataka, weekend dining was centered around the kitchen — the aroma of freshly roasted coconut, stone-ground red chillies, and sizzle of tawa fish.</p>
-        <p>Operating out of <strong>Mathikere, Bangalore</strong>, Mangalore Foods prepares every dish using original recipes passed down through generations. Clean, comforting flavors cooked fresh for your weekend lunch.</p>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section>
-      <div class="section-head">
-        <h2>How Ordering Works</h2>
-        <p>Simple pre-order system for weekend lunch preparation in Bangalore</p>
-      </div>
-
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-num">1</div>
-          <h4>Select Dishes</h4>
-          <p>Choose your coastal dishes from our weekend lunch menu.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">2</div>
-          <h4>Pick Saturday / Sunday</h4>
-          <p>Select your delivery date for the 12:00 PM – 2:00 PM lunch slot.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">3</div>
-          <h4>Pay 100% Online</h4>
-          <p>Complete payment securely via Razorpay.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">4</div>
-          <h4>Partner Delivery</h4>
-          <p>Dispatched fresh from Mathikere via distance partners (Rapido/Porter).</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- HYGIENE & TRUST -->
-    <section style="margin-top: 50px;">
-      <div class="trust-grid">
-        <div class="trust-card">
-          <span class="trust-icon">🧼</span>
-          <h4>Hygienic Kitchen</h4>
-          <p>Prepared in a disinfected cloud kitchen facility in Mathikere.</p>
-        </div>
-        <div class="trust-card">
-          <span class="trust-icon">🍲</span>
-          <h4>Fresh Batches</h4>
-          <p>Food is cooked fresh on weekend mornings specifically for pre-orders.</p>
-        </div>
-        <div class="trust-card">
-          <span class="trust-icon">🔒</span>
-          <h4>Secure Payments</h4>
-          <p>Processed securely via Razorpay with instant verification.</p>
-        </div>
-        <div class="trust-card">
-          <span class="trust-icon">📦</span>
-          <h4>Sealed Packaging</h4>
-          <p>Leak-proof containers dispatched safely across Bangalore.</p>
-        </div>
-      </div>
+      <div id="deliveryAlert" class="status-alert"></div>
     </section>
 
     <!-- EMBEDDED ORDER FORM -->
-    <section id="orderForm" class="form-wrapper">
+    <section id="orderForm" style="margin-top: 40px;">
       <div class="section-head" style="margin-bottom:16px;">
-        <h2>Place Your Lunch Pre-Order</h2>
-        <p>Fill out the form below to confirm your weekend lunch meal</p>
+        <h2>Place Your Weekend Pre-Order</h2>
+        <p>Complete the form below to lock in your lunch dispatch slot</p>
       </div>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe-v_7eLRreIIaEgQW1PTQYY3GylUl56x9XYpLcZIBmLZ2iJA/viewform?embedded=true">Loading order form...</iframe>
-    </section>
-
-    <!-- FREQUENTLY ASKED QUESTIONS -->
-    <section>
-      <div class="section-head">
-        <h2>Frequently Asked Questions</h2>
-      </div>
-
-      <div class="faq-item">
-        <h4>Where are you located?</h4>
-        <p>Our cloud kitchen kitchen is based in <strong>Mathikere, Bangalore</strong>, serving nearby and citywide locations via courier partners.</p>
-      </div>
-
-      <div class="faq-item">
-        <h4>What days and hours do you operate?</h4>
-        <p>We operate exclusively on Saturdays and Sundays for the <strong>12:00 PM – 2:00 PM Lunch Slot</strong>.</p>
-      </div>
-
-      <div class="faq-item">
-        <h4>When is the order cut-off?</h4>
-        <p>For Saturday lunch, pre-order before Friday 6:00 PM. For Sunday lunch, pre-order before Saturday 6:00 PM.</p>
-      </div>
-
-      <div class="faq-item">
-        <h4>How is delivery handled?</h4>
-        <p>Delivery is dispatched from Mathikere based on distance using platforms like Rapido, Porter, or fast local courier services.</p>
-      </div>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe-v_7eLRreIIaEgQW1PTQYY3GylUl56x9XYpLcZIBmLZ2iJA/viewform?embedded=true" style="width:100%; height:1200px; border:none;">Loading order form...</iframe>
     </section>
 
   </main>
-
-  <!-- FLOATING WHATSAPP BUTTON -->
-  <a id="floatingWaLink" href="https://wa.me/918310229876?text=Hi%20Mangalore%20Foods,%20I%20have%20a%20question%20about%20weekend%20lunch%20pre-orders" target="_blank" class="whatsapp-float">
-    <span>💬 WhatsApp Support</span>
-  </a>
 
   <!-- FOOTER -->
   <footer>
@@ -904,18 +376,7 @@
       <div class="footer-col">
         <h4>Mangalore Foods</h4>
         <p>Mathikere, Bangalore</p>
-        <p>Authentic Mangalorean weekend cloud kitchen preparing home-style delicacies for lunch.</p>
       </div>
-      
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#menu">Weekend Menu</a></li>
-          <li><a href="#orderForm">Place Pre-Order</a></li>
-          <li><a href="mailto:namma.mangalorefoods@gmail.com">Contact Support</a></li>
-        </ul>
-      </div>
-
       <div class="footer-col">
         <h4>Compliance & Policies</h4>
         <ul>
@@ -925,23 +386,87 @@
           <li><a href="delivery-policy.html">Delivery Policy</a></li>
         </ul>
       </div>
-
-      <!-- SOCIAL PROFILES -->
-      <div class="footer-col">
-        <h4>Social Profiles</h4>
-        <div class="social-links-list">
-          <a id="footerWa" href="https://wa.me/918310229876" target="_blank" class="social-link-item"><span class="social-icon-wa">💬</span> WhatsApp</a>
-          <a id="footerIg" href="#" target="_blank" class="social-link-item"><span class="social-icon-ig">📸</span> Instagram</a>
-          <a id="footerYt" href="#" target="_blank" class="social-link-item"><span class="social-icon-yt">▶️</span> YouTube</a>
-        </div>
-      </div>
     </div>
-
     <div class="footer-bottom">
-      <p>&copy; Mangalore Foods. All Rights Reserved. Mathikere, Bangalore | Contact: namma.mangalorefoods@gmail.com</p>
+      <p>&copy; Mangalore Foods. Mathikere, Bangalore | Contact: namma.mangalorefoods@gmail.com</p>
       <p style="font-size:12px; color: var(--gold); font-weight: bold; margin-top: 6px;">FSSAI Registration No: 21223181000014</p>
     </div>
   </footer>
+
+  <!-- LEAFLET MAP & APPS SCRIPT INTEGRATION -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const KITCHEN_LAT = 13.0297914;
+    const KITCHEN_LNG = 77.5605906;
+    const APPS_SCRIPT_EXEC = "https://script.google.com/macros/s/AKfycbx_YOUR_DEPLOYMENT_ID/exec";
+
+    let map = L.map('map').setView([KITCHEN_LAT, KITCHEN_LNG], 13);
+    
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // Kitchen Marker
+    L.marker([KITCHEN_LAT, KITCHEN_LNG]).addTo(map)
+      .bindPopup('<b>Mangalore Foods Kitchen</b><br>Mathikere Dispatch Hub').openPopup();
+
+    let customerMarker;
+
+    function onMapClick(e) {
+      setCustomerLocation(e.latlng.lat, e.latlng.lng);
+    }
+
+    map.on('click', onMapClick);
+
+    function locateUser() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          setCustomerLocation(position.coords.latitude, position.coords.longitude);
+        }, () => {
+          alert("Could not access your location. Please click on the map manually.");
+        });
+      }
+    }
+
+    async function setCustomerLocation(lat, lng) {
+      if (customerMarker) {
+        customerMarker.setLatLng([lat, lng]);
+      } else {
+        customerMarker = L.marker([lat, lng], {draggable: true}).addTo(map);
+        customerMarker.on('dragend', function(event) {
+          let position = customerMarker.getLatLng();
+          checkDelivery(position.lat, position.lng);
+        });
+      }
+
+      map.setView([lat, lng], 14);
+      checkDelivery(lat, lng);
+    }
+
+    async function checkDelivery(lat, lng) {
+      const alertBox = document.getElementById("deliveryAlert");
+      alertBox.style.display = "block";
+      alertBox.className = "status-alert";
+      alertBox.innerHTML = "Checking serviceability from Mathikere...";
+
+      try {
+        const response = await fetch(`${APPS_SCRIPT_EXEC}?action=calculateDelivery&lat=${lat}&lng=${lng}&subtotal=300`);
+        const data = await response.json();
+
+        if (data.serviceable) {
+          alertBox.className = "status-alert status-success";
+          alertBox.innerHTML = `✅ <b>Serviceable Area!</b><br>Distance: ${data.distanceKM} km from Mathikere<br>Delivery Charge: ₹${data.deliveryFee}`;
+        } else {
+          alertBox.className = "status-alert status-error";
+          alertBox.innerHTML = `❌ ${data.message}`;
+        }
+      } catch (err) {
+        alertBox.className = "status-alert status-error";
+        alertBox.innerHTML = "Could not reach calculation engine. Please verify connection.";
+      }
+    }
+  </script>
 
 </body>
 </html>
