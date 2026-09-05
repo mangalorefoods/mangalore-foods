@@ -9,6 +9,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
   <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
 
+  <!-- GOOGLE FONTS FOR STYLISH HEADER TAGLINE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+
   <!-- LEAFLET MAP CSS (FREE OPENSTREETMAP INTERFACE) -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
@@ -94,13 +99,15 @@
       color: var(--gold);
       font-weight: bold;
       margin: 0;
+      line-height: 1.1;
     }
     .brand-tagline-sub {
-      font-size: 10px;
-      color: #e0e0e0;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin: 0;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 11px;
+      color: #ffd700;
+      letter-spacing: 0.5px;
+      margin: 2px 0 0 0;
     }
     .nav-btn {
       background: var(--gold);
@@ -113,6 +120,11 @@
       transition: background 0.2s ease;
     }
     .nav-btn:hover { background: #ffffff; }
+
+    @media (max-width: 600px) {
+      .brand-title { font-size: 17px; }
+      .brand-tagline-sub { font-size: 10px; }
+    }
 
     .hero {
       background: linear-gradient(135deg, rgba(0,43,73,0.92), rgba(183,28,28,0.85)), url('https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
@@ -369,14 +381,14 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER WITH STYLISH TAGLINE -->
   <header class="nav-header">
     <div class="nav-container">
       <a href="#" class="brand-logo">
         <img src="logo.png" alt="Mangalore Foods Logo" class="brand-logo-img" onerror="this.style.display='none'">
         <div>
           <p class="brand-title">Mangalore Foods</p>
-          <p class="brand-tagline-sub">Mathikere, Bangalore</p>
+          <p class="brand-tagline-sub">Taste of Coastal Tradition</p>
         </div>
       </a>
       <a href="#deliveryCalculator" class="nav-btn">Check Delivery</a>
@@ -657,6 +669,15 @@
       <div id="deliveryAlert" class="status-alert"></div>
     </section>
 
+    <!-- EMBEDDED ORDER FORM SECTION -->
+    <section id="orderForm" style="margin-top: 40px;">
+      <div class="section-head" style="margin-bottom:16px;">
+        <h2>Place Your Weekend Pre-Order</h2>
+        <p>Complete the form below to lock in your lunch dispatch slot</p>
+      </div>
+      <iframe id="googleFormIframe" src="https://docs.google.com/forms/d/e/1FAIpQLSe-v_7eLRreIIaEgQW1PTQYY3GylUl56x9XYpLcZIBmLZ2iJA/viewform?embedded=true" style="width:100%; height:1200px; border:none;">Loading order form...</iframe>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -746,15 +767,18 @@
         if (data.serviceable) {
           alertBox.className = "status-alert status-success";
           
-          // GENERATE WORKING PRE-FILL URL TO OPEN FORM IN NEW TAB WITH PRE-FILLED FEE
-          const prefillUrl = `https://docs.google.com/forms/d/e/1FAIpQLSe-v_7eLRreIIaEgQW1PTQYY3GylUl56x9XYpLcZIBmLZ2iJA/viewform?usp=pp_url&entry.845942429=${data.deliveryFee}`;
+          const prefillUrl = `https://docs.google.com/forms/d/e/1FAIpQLSe-v_7eLRreIIaEgQW1PTQYY3GylUl56x9XYpLcZIBmLZ2iJA/viewform?embedded=true&entry.845942429=${data.deliveryFee}`;
+          const externalPrefillUrl = `https://docs.google.com/forms/d/e/1FAIpQLSe-v_7eLRreIIaEgQW1PTQYY3GylUl56x9XYpLcZIBmLZ2iJA/viewform?usp=pp_url&entry.845942429=${data.deliveryFee}`;
+
+          // Update embedded iframe
+          document.getElementById("googleFormIframe").src = prefillUrl;
 
           alertBox.innerHTML = `
             ✅ <b>Serviceable Area!</b><br>
             Distance: ${data.distanceKM} km from Mathikere<br>
             Calculated Delivery Charge: ₹${data.deliveryFee}<br><br>
-            <a href="${prefillUrl}" target="_blank" class="btn-primary" style="display:inline-block; padding:12px 24px; text-decoration:none; color:#002b49;">
-              Proceed to Order Form (₹${data.deliveryFee} Delivery Charge Pre-Filled) →
+            <a href="${externalPrefillUrl}" target="_blank" class="btn-primary" style="display:inline-block; padding:10px 20px; text-decoration:none; color:#002b49;">
+              Open Pre-Filled Order Form in New Tab (₹${data.deliveryFee} Fee) →
             </a>
           `;
         } else {
