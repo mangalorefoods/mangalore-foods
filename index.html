@@ -225,7 +225,7 @@
       margin: 0;
     }
 
-    /* MENU GRID */
+    /* MENU GRID (NO IMAGES) */
     .menu-category-title {
       font-family: Georgia, serif;
       font-size: 20px;
@@ -237,38 +237,21 @@
     .menu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      gap: 20px;
     }
     .dish-card {
       background: var(--card-bg);
       border-radius: 12px;
-      overflow: hidden;
       border: 1px solid var(--border);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
       display: flex;
       flex-direction: column;
+      border-left: 5px solid var(--accent);
       transition: transform 0.2s ease;
     }
-    .dish-card:hover { transform: translateY(-4px); }
-    .dish-img {
-      height: 180px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-    .dish-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(0,0,0,0.75);
-      color: #fff;
-      font-size: 11px;
-      font-weight: bold;
-      padding: 4px 10px;
-      border-radius: 20px;
-    }
+    .dish-card:hover { transform: translateY(-3px); }
     .dish-body {
-      padding: 18px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -293,6 +276,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
     .indicator-nonveg::after {
       content: "";
@@ -304,7 +288,7 @@
     .dish-desc {
       font-size: 13px;
       color: var(--muted);
-      margin: 0 0 14px 0;
+      margin: 0 0 16px 0;
       flex-grow: 1;
       line-height: 1.5;
     }
@@ -330,7 +314,7 @@
       background: var(--primary);
       color: #ffffff;
       text-decoration: none;
-      padding: 8px 16px;
+      padding: 8px 18px;
       border-radius: 6px;
       font-size: 13px;
       font-weight: bold;
@@ -338,7 +322,7 @@
     }
     .order-item-btn:hover { background: var(--accent); }
 
-    /* BRAND STORY / A TASTE OF HOME */
+    /* BRAND STORY */
     .story-section {
       background: #ffffff;
       border-radius: 16px;
@@ -346,15 +330,6 @@
       margin: 50px 0;
       border: 1px solid var(--border);
       box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    }
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: center;
-    }
-    @media (max-width: 768px) {
-      .story-grid { grid-template-columns: 1fr; }
     }
     .story-content h3 {
       font-family: Georgia, serif;
@@ -426,7 +401,7 @@
     .step-card h4 { margin: 0 0 8px 0; color: var(--primary); }
     .step-card p { margin: 0; font-size: 13px; color: var(--muted); }
 
-    /* FORM SECTION CONTAINER */
+    /* FORM CONTAINER */
     .form-wrapper {
       background: #ffffff;
       border-radius: 16px;
@@ -542,13 +517,10 @@
       </div>
 
       <h3 class="menu-category-title">Currently Available</h3>
-      <div class="menu-grid">
+      <div class="menu-grid" id="dynamicMenuGrid">
 
         <!-- DISH 1 -->
         <div class="dish-card">
-          <div class="dish-img" style="background-image: url('https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=600&q=80');">
-            <span class="dish-badge">Signature Special</span>
-          </div>
           <div class="dish-body">
             <div class="dish-header">
               <h3 class="dish-title">Chicken Sukka</h3>
@@ -567,9 +539,6 @@
 
         <!-- DISH 2 -->
         <div class="dish-card">
-          <div class="dish-img" style="background-image: url('https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80');">
-            <span class="dish-badge">Fresh Catch</span>
-          </div>
           <div class="dish-body">
             <div class="dish-header">
               <h3 class="dish-title">Anjal Tawa Fry</h3>
@@ -588,9 +557,6 @@
 
         <!-- DISH 3 -->
         <div class="dish-card">
-          <div class="dish-img" style="background-image: url('https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=600&q=80');">
-            <span class="dish-badge">Coastal Favorite</span>
-          </div>
           <div class="dish-body">
             <div class="dish-header">
               <h3 class="dish-title">Kori Rotti & Curry</h3>
@@ -609,8 +575,6 @@
 
         <!-- DISH 4 -->
         <div class="dish-card">
-          <div class="dish-img" style="background-image: url('https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80');">
-          </div>
           <div class="dish-body">
             <div class="dish-header">
               <h3 class="dish-title">Neer Dosa (Set of 4)</h3>
@@ -650,15 +614,10 @@
 
     <!-- BRAND STORY -->
     <section class="story-section">
-      <div class="story-grid">
-        <div class="story-content">
-          <h3>A Taste of Home</h3>
-          <p>Growing up in coastal Karnataka, weekend dining was centered around the kitchen — the aroma of freshly roasted coconut, stone-ground red chillies, and sizzle of tawa fish.</p>
-          <p>At <strong>Mangalore Foods</strong>, we prepare every dish using original recipes passed down through generations. No artificial colors, no generic hotel gravies — just clean, comforting flavors prepared with care.</p>
-        </div>
-        <div>
-          <img src="https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=600&q=80" alt="Mangalorean Spices" style="width:100%; border-radius:12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-        </div>
+      <div class="story-content">
+        <h3>A Taste of Home</h3>
+        <p>Growing up in coastal Karnataka, weekend dining was centered around the kitchen — the aroma of freshly roasted coconut, stone-ground red chillies, and sizzle of tawa fish.</p>
+        <p>At <strong>Mangalore Foods</strong>, we prepare every dish using original recipes passed down through generations. No artificial colors, no generic hotel gravies — just clean, comforting flavors prepared with care.</p>
       </div>
     </section>
 
