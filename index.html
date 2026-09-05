@@ -4,15 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- FAVICON & APP ICONS -->
   <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
   <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
   <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
 
-  <!-- LEAFLET MAP CSS (FREE OPENSTREETMAP INTERFACE) -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-  <!-- GOOGLE ANALYTICS 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYKV46ZYHP"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -21,10 +18,8 @@
     gtag('config', 'G-ZYKV46ZYHP');
   </script>
 
-  <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
   <meta name="google-site-verification" content="Do2OBU_rHPl6f5xlIWstqqC0jbG_EFlcHTVIhBJjZQk" />
 
-  <!-- SEO & OPEN GRAPH META TAGS -->
   <title>Mangalore Foods — Coastal Food Pre-Order in Mathikere, Bangalore</title>
   <meta name="title" content="Mangalore Foods — Coastal Food Pre-Order in Mathikere, Bangalore">
   <meta name="description" content="Authentic Mangalorean Chicken Ghee Roast, Kori Gassi, Anjal Fry, Neer Dosa, and coastal specials operating out of Mathikere, Bangalore. Weekend lunch delivery pre-orders.">
@@ -370,7 +365,6 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="nav-header">
     <div class="nav-container">
       <a href="#" class="brand-logo">
@@ -384,7 +378,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <span class="hero-badge">Weekend Cloud Kitchen — Mathikere, Bangalore</span>
     <h1>A Taste That Takes You Home</h1>
@@ -394,7 +387,6 @@
     </div>
   </section>
 
-  <!-- SCHEDULE BAR -->
   <div class="schedule-bar">
     <div class="schedule-container">
       <div class="schedule-item">📍 Dispatch Location: <span>Mathikere, Bangalore</span></div>
@@ -405,14 +397,12 @@
 
   <main class="container">
 
-    <!-- MENU SECTION -->
     <section id="menu">
       <div class="section-head">
         <h2>This Weekend's Menu</h2>
         <p>Pre-order before Friday 6:00 PM for Saturday lunch, or Saturday 6:00 PM for Sunday lunch.</p>
       </div>
 
-      <!-- CHICKEN SPECIALS -->
       <h3 class="menu-category-title">Chicken Specials</h3>
       <div class="menu-grid">
 
@@ -483,7 +473,6 @@
 
       </div>
 
-      <!-- FISH CURRIES -->
       <h3 class="menu-category-title">Fish Curries</h3>
       <div class="menu-grid">
 
@@ -528,7 +517,6 @@
 
       </div>
 
-      <!-- FISH FRY -->
       <h3 class="menu-category-title">Fish Fry (Tawa Specials)</h3>
       <div class="menu-grid">
 
@@ -586,7 +574,6 @@
 
       </div>
 
-      <!-- ACCOMPANIMENTS & SIDES -->
       <h3 class="menu-category-title">Accompaniments & Sides</h3>
       <div class="menu-grid">
 
@@ -645,7 +632,6 @@
       </div>
     </section>
 
-    <!-- SMART DELIVERY ZONE & MAP CALCULATOR -->
     <section id="deliveryCalculator" class="delivery-box">
       <div class="section-head" style="margin-bottom:16px;">
         <h2>Select Delivery Location</h2>
@@ -658,7 +644,6 @@
       <div id="deliveryAlert" class="status-alert"></div>
     </section>
 
-    <!-- EMBEDDED ORDER FORM (RESTORED VALID GOOGLE FORM ID) -->
     <section id="orderForm" style="margin-top: 40px;">
       <div class="section-head" style="margin-bottom:16px;">
         <h2>Place Your Weekend Pre-Order</h2>
@@ -669,7 +654,6 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div class="footer-col">
@@ -692,16 +676,15 @@
     </div>
   </footer>
 
-  <!-- LEAFLET MAP & APPS SCRIPT INTEGRATION -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     const KITCHEN_LAT = 13.0297914;
     const KITCHEN_LNG = 77.5605906;
     const APPS_SCRIPT_EXEC = "https://script.google.com/macros/s/AKfycbwg9c78QoRLGweRTcsLYku_Cpcl-dOA9goAhbHNBp89oaUfayg9oNagsGyI08d6joWx/exec";
 
-    // VALIDATED BASE FORM LINK & ENTRY ID
-    const BASE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe-v_7eLRreIIaEgQW1PTQYY3GylUl56x9XYpLcZIBmLZ2iJA/viewform?embedded=true";
-    const ENTRY_ID = "entry.123456789"; 
+    // BASE FORM LINK & PRE-FILL ENTRY ID
+    const BASE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe-v_7eLRreIIaEgQW1PTQYY3GylUl56x9XYpLcZIBmLZ2iJA/viewform?embedded=true&usp=pp_url";
+    const ENTRY_ID = "entry.845942429"; 
 
     let map = L.map('map').setView([KITCHEN_LAT, KITCHEN_LNG], 13);
     
@@ -759,9 +742,9 @@
 
         if (data.serviceable) {
           alertBox.className = "status-alert status-success";
-          alertBox.innerHTML = `✅ <b>Serviceable Area!</b><br>Distance: ${data.distanceKM} km from Mathikere<br>Delivery Charge: ₹${data.deliveryFee}<br><i>(Added to your form below)</i>`;
+          alertBox.innerHTML = `✅ <b>Serviceable Area!</b><br>Distance: ${data.distanceKM} km from Mathikere<br>Delivery Charge: ₹${data.deliveryFee}<br><i>(Auto-filled into your order form below)</i>`;
           
-          // DYNAMICALLY PASS CALCULATED FEE INTO GOOGLE FORM IFRAME
+          // DYNAMICALLY PASS CALCULATED FEE INTO GOOGLE FORM ENTRY FIELD
           const iframe = document.getElementById("googleFormIframe");
           iframe.src = `${BASE_FORM_URL}&${ENTRY_ID}=${data.deliveryFee}`;
         } else {
