@@ -21,25 +21,25 @@
   <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
   <meta name="google-site-verification" content="Do2OBU_rHPl6f5xlIWstqqC0jbG_EFlcHTVIhBJjZQk" />
 
-  <!-- SEO & OPEN GRAPH (SOCIAL PREVIEW) META TAGS -->
+  <!-- SEO & OPEN GRAPH META TAGS -->
   <title>Mangalore Foods — Taste of Coastal Tradition | Weekend Cloud Kitchen</title>
   <meta name="title" content="Mangalore Foods — Taste of Coastal Tradition">
   <meta name="description" content="Order authentic Mangalorean Chicken Ghee Roast, Kori Gassi, Anjal Fry, Neer Dosa, and coastal specials. Freshly prepared weekend cloud kitchen with online pre-ordering.">
   <meta name="keywords" content="Mangalore Foods, Mangalorean food delivery, Chicken Sukka, Kori Gassi, Coastal Karnataka cuisine, Anjal Fry, Neer Dosa, Appam">
   <meta name="robots" content="index, follow">
 
-  <!-- SOCIAL MEDIA PREVIEW IMAGE (OPEN GRAPH / TWITTER CARDS) -->
+  <!-- SOCIAL MEDIA PREVIEW IMAGE -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mangalorefoods.github.io/mangalore-foods/">
   <meta property="og:title" content="Mangalore Foods — Authentic Coastal Specials">
-  <meta property="og:description" content="The flavours you grew up loving. Freshly prepared Mangalorean dishes delivered every Saturday & Sunday.">
+  <meta property="og:description" content="The flavours you grew up loving. Freshly prepared Mangalorean dishes delivered every Saturday & Sunday lunch.">
   <meta property="og:image" content="og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Mangalore Foods — Authentic Coastal Specials">
-  <meta name="twitter:description" content="The flavours you grew up loving. Freshly prepared Mangalorean dishes delivered every Saturday & Sunday.">
+  <meta name="twitter:description" content="The flavours you grew up loving. Freshly prepared Mangalorean dishes delivered every Saturday & Sunday lunch.">
   <meta name="twitter:image" content="og-image.jpg">
 
   <!-- LOCAL BUSINESS SCHEMA -->
@@ -52,7 +52,7 @@
     "servesCuisine": "Mangalorean, Coastal Indian",
     "priceRange": "₹₹",
     "email": "namma.mangalorefoods@gmail.com",
-    "openingHours": "Sa,Su 12:30-21:30"
+    "openingHours": "Sa,Su 12:00-14:00"
   }
   </script>
 
@@ -84,7 +84,6 @@
       line-height: 1.6;
     }
 
-    /* HEADER & NAV */
     header.nav-header {
       background-color: var(--primary);
       position: sticky;
@@ -140,7 +139,6 @@
     }
     .nav-btn:hover { background: #ffffff; }
 
-    /* RESPONSIVE MOBILE ADJUSTMENTS */
     @media (max-width: 600px) {
       .nav-container { padding: 6px 14px; }
       .brand-logo-img { height: 38px; max-width: 48px; }
@@ -149,7 +147,6 @@
       .nav-btn { padding: 6px 14px; font-size: 12px; }
     }
 
-    /* HERO SECTION */
     .hero {
       background: linear-gradient(135deg, rgba(0,43,73,0.92), rgba(183,28,28,0.85)), url('https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
       color: #ffffff;
@@ -212,7 +209,7 @@
     }
     .btn-secondary:hover { background: rgba(255,255,255,0.25); }
 
-    /* OPERATING HOURS BANNER */
+    /* LUNCH-ONLY OPERATING HOURS BANNER */
     .schedule-bar {
       background: var(--primary-dark);
       color: #ffffff;
@@ -224,15 +221,14 @@
       max-width: 900px;
       margin: 0 auto;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
-      font-size: 13px;
+      gap: 24px;
+      font-size: 14px;
     }
     .schedule-item span { color: var(--gold); font-weight: bold; }
 
-    /* GENERAL LAYOUT */
     .container {
       max-width: 1000px;
       margin: 40px auto;
@@ -247,7 +243,6 @@
     }
     .section-head p { color: var(--muted); font-size: 15px; margin: 0; }
 
-    /* MENU GRID */
     .menu-category-title {
       font-family: Georgia, serif;
       font-size: 20px;
@@ -292,7 +287,6 @@
       margin: 0;
     }
 
-    /* DIETARY INDICATORS */
     .indicator-nonveg {
       width: 14px;
       height: 14px;
@@ -356,7 +350,6 @@
     }
     .order-item-btn:hover { background: var(--accent); }
 
-    /* BRAND STORY */
     .story-section {
       background: #ffffff;
       border-radius: 16px;
@@ -377,7 +370,6 @@
       line-height: 1.7;
     }
 
-    /* HYGIENE & TRUST CARDS */
     .trust-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -394,7 +386,6 @@
     .trust-card h4 { margin: 0 0 6px 0; color: var(--primary); font-size: 16px; }
     .trust-card p { margin: 0; font-size: 12px; color: var(--muted); }
 
-    /* HOW IT WORKS */
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -423,7 +414,6 @@
     .step-card h4 { margin: 0 0 8px 0; color: var(--primary); }
     .step-card p { margin: 0; font-size: 13px; color: var(--muted); }
 
-    /* FORM CONTAINER */
     .form-wrapper {
       background: #ffffff;
       border-radius: 16px;
@@ -434,7 +424,6 @@
     }
     iframe { width: 100%; height: 1250px; border: none; }
 
-    /* FAQ ACCORDION */
     .faq-item {
       background: #ffffff;
       border: 1px solid var(--border);
@@ -445,7 +434,6 @@
     .faq-item h4 { margin: 0 0 6px 0; color: var(--primary); font-size: 16px; }
     .faq-item p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; }
 
-    /* FLOATING WHATSAPP BUTTON */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -464,7 +452,6 @@
       gap: 8px;
     }
 
-    /* FOOTER & SOCIAL ICONS */
     footer {
       background: var(--primary-dark);
       color: #a0aec0;
@@ -538,19 +525,18 @@
   <section class="hero">
     <span class="hero-badge">Weekend Cloud Kitchen</span>
     <h1>A Taste That Takes You Home</h1>
-    <p class="hero-subtitle">Authentic, home-style Mangalorean specialties slow-cooked with traditional spices. Freshly prepared for your weekend family dining.</p>
+    <p class="hero-subtitle">Authentic, home-style Mangalorean specialties slow-cooked with traditional spices. Freshly prepared for your weekend family lunch.</p>
     <div class="hero-ctas">
-      <a href="#orderForm" class="btn-primary">🍲 Order Weekend Specials</a>
+      <a href="#orderForm" class="btn-primary">🍲 Order Weekend Lunch</a>
       <a href="#menu" class="btn-secondary">Explore Menu</a>
     </div>
   </section>
 
-  <!-- OPERATING SCHEDULE BAR -->
+  <!-- LUNCH-ONLY OPERATING SCHEDULE BAR -->
   <div class="schedule-bar">
     <div class="schedule-container">
       <div class="schedule-item">📅 Operating Days: <span>Saturday & Sunday Only</span></div>
-      <div class="schedule-item">🕛 Lunch Slot: <span>12:30 PM – 2:30 PM</span></div>
-      <div class="schedule-item">🌙 Dinner Slot: <span>7:30 PM – 9:30 PM</span></div>
+      <div class="schedule-item">🕛 Lunch Slot: <span>12:00 PM – 2:00 PM</span></div>
     </div>
   </div>
 
@@ -560,7 +546,7 @@
     <section id="menu">
       <div class="section-head">
         <h2>This Weekend's Menu</h2>
-        <p>Pre-order before Friday 6:00 PM for Saturday delivery, or Saturday 6:00 PM for Sunday delivery.</p>
+        <p>Pre-order before Friday 6:00 PM for Saturday lunch, or Saturday 6:00 PM for Sunday lunch.</p>
       </div>
 
       <!-- CHICKEN SPECIALS -->
@@ -801,7 +787,7 @@
       <div class="story-content">
         <h3>A Taste of Home</h3>
         <p>Growing up in coastal Karnataka, weekend dining was centered around the kitchen — the aroma of freshly roasted coconut, stone-ground red chillies, and sizzle of tawa fish.</p>
-        <p>At <strong>Mangalore Foods</strong>, we prepare every dish using original recipes passed down through generations. No artificial colors, no generic hotel gravies — just clean, comforting flavors prepared with care.</p>
+        <p>At <strong>Mangalore Foods</strong>, we prepare every dish using original recipes passed down through generations. No artificial colors, no generic hotel gravies — just clean, comforting flavors prepared with care for your weekend lunch.</p>
       </div>
     </section>
 
@@ -809,19 +795,19 @@
     <section>
       <div class="section-head">
         <h2>How Ordering Works</h2>
-        <p>Simple pre-order system for weekend food preparation</p>
+        <p>Simple pre-order system for weekend lunch preparation</p>
       </div>
 
       <div class="steps-grid">
         <div class="step-card">
           <div class="step-num">1</div>
           <h4>Select Dishes</h4>
-          <p>Choose your coastal dishes from our weekend menu.</p>
+          <p>Choose your coastal dishes from our weekend lunch menu.</p>
         </div>
         <div class="step-card">
           <div class="step-num">2</div>
-          <h4>Pick Slot</h4>
-          <p>Select Saturday/Sunday Lunch or Dinner slot.</p>
+          <h4>Pick Saturday / Sunday</h4>
+          <p>Select your delivery date for the 12:00 PM – 2:00 PM lunch slot.</p>
         </div>
         <div class="step-card">
           <div class="step-num">3</div>
@@ -830,8 +816,8 @@
         </div>
         <div class="step-card">
           <div class="step-num">4</div>
-          <h4>Fresh Delivery</h4>
-          <p>Your order is cooked fresh and delivered to your doorstep.</p>
+          <h4>Partner Delivery</h4>
+          <p>Dispatched fresh via distance-based partners (Rapido/Porter/Swiggy Genie).</p>
         </div>
       </div>
     </section>
@@ -847,7 +833,7 @@
         <div class="trust-card">
           <span class="trust-icon">🍲</span>
           <h4>Fresh Batches</h4>
-          <p>Food is cooked only after pre-orders close to avoid reheating.</p>
+          <p>Food is cooked fresh on weekend mornings specifically for pre-orders.</p>
         </div>
         <div class="trust-card">
           <span class="trust-icon">🔒</span>
@@ -857,7 +843,7 @@
         <div class="trust-card">
           <span class="trust-icon">📦</span>
           <h4>Sealed Packaging</h4>
-          <p>Leak-proof containers to preserve warmth and aroma.</p>
+          <p>Leak-proof containers dispatched safely via reliable couriers.</p>
         </div>
       </div>
     </section>
@@ -865,8 +851,8 @@
     <!-- EMBEDDED ORDER FORM -->
     <section id="orderForm" class="form-wrapper">
       <div class="section-head" style="margin-bottom:16px;">
-        <h2>Place Your Pre-Order</h2>
-        <p>Fill out the form below to confirm your weekend meal</p>
+        <h2>Place Your Lunch Pre-Order</h2>
+        <p>Fill out the form below to confirm your weekend lunch meal</p>
       </div>
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe-v_7eLRreIIaEgQW1PTQYY3GylUl56x9XYpLcZIBmLZ2iJA/viewform?embedded=true">Loading order form...</iframe>
     </section>
@@ -878,25 +864,30 @@
       </div>
 
       <div class="faq-item">
-        <h4>What days do you operate?</h4>
-        <p>We operate as a specialized cloud kitchen every Saturday and Sunday for Lunch and Dinner slots.</p>
+        <h4>What days and hours do you operate?</h4>
+        <p>We operate exclusively on Saturdays and Sundays for the <strong>12:00 PM – 2:00 PM Lunch Slot</strong>.</p>
       </div>
 
       <div class="faq-item">
         <h4>When is the order cut-off?</h4>
-        <p>For Saturday orders, please pre-order before Friday 6:00 PM. For Sunday orders, pre-order before Saturday 6:00 PM.</p>
+        <p>For Saturday lunch, pre-order before Friday 6:00 PM. For Sunday lunch, pre-order before Saturday 6:00 PM.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How is delivery handled?</h4>
+        <p>Delivery is initiated based on distance from our cloud kitchen using platforms like Rapido, Porter, or fast local courier services to ensure hot delivery.</p>
       </div>
 
       <div class="faq-item">
         <h4>How do I receive my confirmation?</h4>
-        <p>Once you complete your payment on the form, an instant email receipt is generated and sent to your email address.</p>
+        <p>Once you complete your payment on the form, an instant email receipt is sent to your email address.</p>
       </div>
     </section>
 
   </main>
 
   <!-- FLOATING WHATSAPP BUTTON -->
-  <a id="floatingWaLink" href="https://wa.me/910000000000?text=Hi%20Mangalore%20Foods,%20I%20have%20a%20question%20about%20weekend%20pre-orders" target="_blank" class="whatsapp-float">
+  <a id="floatingWaLink" href="https://wa.me/910000000000?text=Hi%20Mangalore%20Foods,%20I%20have%20a%20question%20about%20weekend%20lunch%20pre-orders" target="_blank" class="whatsapp-float">
     <span>💬 WhatsApp Support</span>
   </a>
 
@@ -906,7 +897,7 @@
       <div class="footer-col">
         <h4>Mangalore Foods</h4>
         <p>Taste of Coastal Tradition</p>
-        <p>Authentic Mangalorean weekend cloud kitchen preparing home-style delicacies.</p>
+        <p>Authentic Mangalorean weekend cloud kitchen preparing home-style delicacies for lunch.</p>
       </div>
       
       <div class="footer-col">
@@ -945,7 +936,6 @@
     </div>
   </footer>
 
-  <!-- AUTOMATED SCRIPT TO FETCH DYNAMIC SOCIAL LINKS FROM GOOGLE SHEETS -->
   <script>
     const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx_YOUR_DEPLOYMENT_ID/exec?action=getSettings";
 
