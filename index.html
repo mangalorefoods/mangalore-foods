@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- FAVICON & APP ICONS -->
+  <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+
   <!-- GOOGLE ANALYTICS 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYKV46ZYHP"></script>
   <script>
@@ -16,16 +21,26 @@
   <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
   <meta name="google-site-verification" content="Do2OBU_rHPl6f5xlIWstqqC0jbG_EFlcHTVIhBJjZQk" />
 
-  <!-- SEO & OPEN GRAPH META TAGS -->
+  <!-- SEO & OPEN GRAPH (SOCIAL PREVIEW) META TAGS -->
   <title>Mangalore Foods — Taste of Coastal Tradition | Weekend Cloud Kitchen</title>
   <meta name="title" content="Mangalore Foods — Taste of Coastal Tradition">
   <meta name="description" content="Order authentic Mangalorean Chicken Ghee Roast, Kori Gassi, Anjal Fry, Neer Dosa, and coastal specials. Freshly prepared weekend cloud kitchen with online pre-ordering.">
   <meta name="keywords" content="Mangalore Foods, Mangalorean food delivery, Chicken Sukka, Kori Gassi, Coastal Karnataka cuisine, Anjal Fry, Neer Dosa, Appam">
   <meta name="robots" content="index, follow">
 
+  <!-- SOCIAL MEDIA PREVIEW IMAGE (OPEN GRAPH / TWITTER CARDS) -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mangalorefoods.github.io/mangalore-foods/">
   <meta property="og:title" content="Mangalore Foods — Authentic Coastal Specials">
   <meta property="og:description" content="The flavours you grew up loving. Freshly prepared Mangalorean dishes delivered every Saturday & Sunday.">
+  <meta property="og:image" content="og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mangalore Foods — Authentic Coastal Specials">
+  <meta name="twitter:description" content="The flavours you grew up loving. Freshly prepared Mangalorean dishes delivered every Saturday & Sunday.">
+  <meta name="twitter:image" content="og-image.jpg">
 
   <!-- LOCAL BUSINESS SCHEMA -->
   <script type="application/ld+json">
@@ -127,23 +142,11 @@
 
     /* RESPONSIVE MOBILE ADJUSTMENTS */
     @media (max-width: 600px) {
-      .nav-container {
-        padding: 6px 14px;
-      }
-      .brand-logo-img {
-        height: 38px;
-        max-width: 48px;
-      }
-      .brand-title {
-        font-size: 17px;
-      }
-      .brand-tagline-sub {
-        font-size: 9px;
-      }
-      .nav-btn {
-        padding: 6px 14px;
-        font-size: 12px;
-      }
+      .nav-container { padding: 6px 14px; }
+      .brand-logo-img { height: 38px; max-width: 48px; }
+      .brand-title { font-size: 17px; }
+      .brand-tagline-sub { font-size: 9px; }
+      .nav-btn { padding: 6px 14px; font-size: 12px; }
     }
 
     /* HERO SECTION */
@@ -195,10 +198,7 @@
       box-shadow: 0 4px 15px rgba(244, 196, 48, 0.4);
       transition: all 0.2s ease;
     }
-    .btn-primary:hover {
-      background: #ffffff;
-      transform: translateY(-2px);
-    }
+    .btn-primary:hover { background: #ffffff; transform: translateY(-2px); }
     .btn-secondary {
       background: rgba(255,255,255,0.15);
       color: #ffffff;
@@ -238,21 +238,14 @@
       margin: 40px auto;
       padding: 0 20px;
     }
-    .section-head {
-      text-align: center;
-      margin-bottom: 36px;
-    }
+    .section-head { text-align: center; margin-bottom: 36px; }
     .section-head h2 {
       font-family: Georgia, serif;
       font-size: 28px;
       color: var(--primary);
       margin: 0 0 8px 0;
     }
-    .section-head p {
-      color: var(--muted);
-      font-size: 15px;
-      margin: 0;
-    }
+    .section-head p { color: var(--muted); font-size: 15px; margin: 0; }
 
     /* MENU GRID */
     .menu-category-title {
@@ -278,9 +271,7 @@
       border-left: 5px solid var(--accent);
       transition: transform 0.2s ease;
     }
-    .dish-card-veg {
-      border-left: 5px solid var(--veg);
-    }
+    .dish-card-veg { border-left: 5px solid var(--veg); }
     .dish-card:hover { transform: translateY(-3px); }
     .dish-body {
       padding: 20px;
@@ -399,21 +390,9 @@
       border: 1px solid var(--border);
       text-align: center;
     }
-    .trust-icon {
-      font-size: 30px;
-      margin-bottom: 10px;
-      display: inline-block;
-    }
-    .trust-card h4 {
-      margin: 0 0 6px 0;
-      color: var(--primary);
-      font-size: 16px;
-    }
-    .trust-card p {
-      margin: 0;
-      font-size: 12px;
-      color: var(--muted);
-    }
+    .trust-icon { font-size: 30px; margin-bottom: 10px; display: inline-block; }
+    .trust-card h4 { margin: 0 0 6px 0; color: var(--primary); font-size: 16px; }
+    .trust-card p { margin: 0; font-size: 12px; color: var(--muted); }
 
     /* HOW IT WORKS */
     .steps-grid {
@@ -485,7 +464,7 @@
       gap: 8px;
     }
 
-    /* FOOTER */
+    /* FOOTER & SOCIAL ICONS */
     footer {
       background: var(--primary-dark);
       color: #a0aec0;
@@ -505,6 +484,30 @@
     .footer-col ul li { margin-bottom: 8px; }
     .footer-col a { color: #cbd5e0; text-decoration: none; }
     .footer-col a:hover { color: #ffffff; }
+
+    .social-links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .social-link-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      padding: 8px 14px;
+      border-radius: 6px;
+      color: #ffffff !important;
+      font-weight: 600;
+      font-size: 12px;
+      transition: background 0.2s ease;
+      width: fit-content;
+    }
+    .social-link-item:hover { background: rgba(255,255,255,0.18); }
+    .social-icon-wa { color: #25d366; }
+    .social-icon-ig { color: #e1306c; }
+    .social-icon-yt { color: #ff0000; }
+
     .footer-bottom {
       max-width: 1000px;
       margin: 0 auto;
@@ -893,7 +896,7 @@
   </main>
 
   <!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/910000000000?text=Hi%20Mangalore%20Foods,%20I%20have%20a%20question%20about%20weekend%20pre-orders" target="_blank" class="whatsapp-float">
+  <a id="floatingWaLink" href="https://wa.me/910000000000?text=Hi%20Mangalore%20Foods,%20I%20have%20a%20question%20about%20weekend%20pre-orders" target="_blank" class="whatsapp-float">
     <span>💬 WhatsApp Support</span>
   </a>
 
@@ -905,6 +908,7 @@
         <p>Taste of Coastal Tradition</p>
         <p>Authentic Mangalorean weekend cloud kitchen preparing home-style delicacies.</p>
       </div>
+      
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul>
@@ -913,6 +917,7 @@
           <li><a href="mailto:namma.mangalorefoods@gmail.com">Contact Support</a></li>
         </ul>
       </div>
+
       <div class="footer-col">
         <h4>Compliance & Policies</h4>
         <ul>
@@ -922,6 +927,16 @@
           <li><a href="delivery-policy.html">Delivery Policy</a></li>
         </ul>
       </div>
+
+      <!-- SOCIAL PROFILES -->
+      <div class="footer-col">
+        <h4>Social Profiles</h4>
+        <div class="social-links-list" id="socialLinksContainer">
+          <a id="footerWa" href="#" target="_blank" class="social-link-item"><span class="social-icon-wa">💬</span> WhatsApp</a>
+          <a id="footerIg" href="#" target="_blank" class="social-link-item"><span class="social-icon-ig">📸</span> Instagram</a>
+          <a id="footerYt" href="#" target="_blank" class="social-link-item"><span class="social-icon-yt">▶️</span> YouTube</a>
+        </div>
+      </div>
     </div>
 
     <div class="footer-bottom">
@@ -929,6 +944,34 @@
       <p style="font-size:12px; color: var(--gold); font-weight: bold; margin-top: 6px;">FSSAI Registration No: 21223181000014</p>
     </div>
   </footer>
+
+  <!-- AUTOMATED SCRIPT TO FETCH DYNAMIC SOCIAL LINKS FROM GOOGLE SHEETS -->
+  <script>
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx_YOUR_DEPLOYMENT_ID/exec?action=getSettings";
+
+    async function loadSocialLinks() {
+      try {
+        const response = await fetch(APPS_SCRIPT_URL);
+        const data = await response.json();
+
+        if (data.whatsapp) {
+          const waUrl = `https://wa.me/${data.whatsapp.replace(/[^0-9]/g, '')}`;
+          document.getElementById("floatingWaLink").href = waUrl;
+          document.getElementById("footerWa").href = waUrl;
+        }
+        if (data.instagram) {
+          document.getElementById("footerIg").href = data.instagram;
+        }
+        if (data.youtube) {
+          document.getElementById("footerYt").href = data.youtube;
+        }
+      } catch (e) {
+        console.log("Using default fallback social links.");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadSocialLinks);
+  </script>
 
 </body>
 </html>
