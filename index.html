@@ -196,7 +196,7 @@
       margin: 0 0 8px 0;
     }
 
-    /* MENU SECTION */
+    /* MENU STYLES */
     .menu-category-title {
       font-family: Georgia, serif;
       font-size: 20px;
@@ -218,7 +218,10 @@
       display: flex;
       flex-direction: column;
       border-left: 5px solid var(--accent);
+      transition: transform 0.2s ease;
     }
+    .dish-card-veg { border-left: 5px solid var(--veg); }
+    .dish-card:hover { transform: translateY(-3px); }
     .dish-body {
       padding: 20px;
       display: flex;
@@ -237,13 +240,69 @@
       color: var(--primary);
       margin: 0;
     }
+    .indicator-nonveg {
+      width: 14px;
+      height: 14px;
+      border: 1px solid var(--nonveg);
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .indicator-nonveg::after {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--nonveg);
+      border-radius: 50%;
+    }
+    .indicator-veg {
+      width: 14px;
+      height: 14px;
+      border: 1px solid var(--veg);
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .indicator-veg::after {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--veg);
+      border-radius: 50%;
+    }
     .dish-desc {
       font-size: 13px;
       color: var(--muted);
       margin: 0 0 16px 0;
+      flex-grow: 1;
+      line-height: 1.5;
     }
+    .dish-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border);
+    }
+    .order-item-btn {
+      background: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 8px 22px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: bold;
+      transition: background 0.2s ease;
+      margin-left: auto;
+    }
+    .order-item-btn:hover { background: var(--accent); }
 
-    /* MAP & DELIVERY CALCULATOR BOX */
+    /* MAP CALCULATOR */
     .delivery-box {
       background: #ffffff;
       border-radius: 16px;
@@ -346,11 +405,251 @@
 
   <main class="container">
 
+    <!-- MENU SECTION -->
+    <section id="menu">
+      <div class="section-head">
+        <h2>This Weekend's Menu</h2>
+        <p>Pre-order before Friday 6:00 PM for Saturday lunch, or Saturday 6:00 PM for Sunday lunch.</p>
+      </div>
+
+      <!-- CHICKEN SPECIALS -->
+      <h3 class="menu-category-title">Chicken Specials</h3>
+      <div class="menu-grid">
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Kori Gassi</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Authentic Mangalorean chicken curry simmered in fresh coconut milk, Byadgi chillies, and coastal herbs.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Kundapur Chicken Curry</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Aromatic regional curry prepared with slow-roasted spices and traditional Kundapur masala blend.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Chicken Sukka</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Tender chicken morsels slow-cooked with fresh roasted grated coconut and coastal spices.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Mangalorean Chicken Curry</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Homestyle chicken curry cooked with roasted spices, garlic, and coconut gravy.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Chicken Ghee Roast</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Fiery, succulent chicken pieces slow-cooked in pure ghee and stone-ground red masala.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FISH CURRIES -->
+      <h3 class="menu-category-title">Fish Curries</h3>
+      <div class="menu-grid">
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Mangalorean Fish Curry</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Fresh catch cooked in tangy, spiced coconut gravy infused with raw tamarind and coriander.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Bangda Curry (Mackerel)</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Traditional mackerel fish curry prepared in red coconut masala and coastal herbs.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Buthai Curry (Sardine)</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Classic coastal sardine fish curry simmered with spicy, sour coconut gravy.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FISH FRY -->
+      <h3 class="menu-category-title">Fish Fry (Tawa Specials)</h3>
+      <div class="menu-grid">
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Anjal Fry (Kingfish)</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Fresh King Fish slice marinated in signature red masala and shallow roasted on a tawa.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Bangda Fry (Mackerel)</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Fresh Mackerel coated with spicy rava and roasted until crisp on the outside.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Kane Fry (Ladyfish)</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Delicate Ladyfish pan-roasted with spicy Byadgi masala coating.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Pomfret Fry</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Whole Pomfret fish coated in coastal spices and shallow roasted to perfection.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ACCOMPANIMENTS & SIDES -->
+      <h3 class="menu-category-title">Accompaniments & Sides</h3>
+      <div class="menu-grid">
+
+        <div class="dish-card dish-card-veg">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Neer Dosa (Set of 5)</h3>
+              <div class="indicator-veg" title="Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Paper-thin, delicate rice crepes. The classic pairing for chicken and fish curries.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card dish-card-veg">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Boiled Red Rice (Portion)</h3>
+              <div class="indicator-veg" title="Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Nutritious, traditional Mangalorean boiled rice served warm.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card dish-card-veg">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Appam (Set of 2)</h3>
+              <div class="indicator-veg" title="Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Soft, fluffy lace hoppers with crispy edges, cooked fresh for your meal.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card dish-card-veg">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Shavige (Boiled Rice Noodle 200g)</h3>
+              <div class="indicator-veg" title="Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Handcrafted rice noodles, steamed soft and ideal for soaking up curries.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- SMART DELIVERY ZONE & MAP CALCULATOR -->
     <section id="deliveryCalculator" class="delivery-box">
       <div class="section-head" style="margin-bottom:16px;">
         <h2>Select Delivery Location</h2>
-        <p>Drag the pin on the map or click "Use Current Location" to check serviceability from Mathikere</p>
+        <p>Drag the pin on the map or click "Detect My Location" to check serviceability from Mathikere</p>
       </div>
 
       <button class="map-btn" onclick="locateUser()">📍 Detect My Location</button>
@@ -398,7 +697,9 @@
   <script>
     const KITCHEN_LAT = 13.0297914;
     const KITCHEN_LNG = 77.5605906;
-    const APPS_SCRIPT_EXEC = "https://script.google.com/macros/s/AKfycbx_YOUR_DEPLOYMENT_ID/exec";
+    
+    // REPLACE THIS WITH YOUR ACTIVE APPS SCRIPT EXEC URL
+    const APPS_SCRIPT_EXEC = "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec";
 
     let map = L.map('map').setView([KITCHEN_LAT, KITCHEN_LNG], 13);
     
