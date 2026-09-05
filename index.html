@@ -19,8 +19,8 @@
   <!-- SEO & OPEN GRAPH META TAGS -->
   <title>Mangalore Foods — Taste of Coastal Tradition | Weekend Cloud Kitchen</title>
   <meta name="title" content="Mangalore Foods — Taste of Coastal Tradition">
-  <meta name="description" content="Order authentic Mangalorean Chicken Sukka, Anjal Tawa Fry, Kori Rotti, and coastal specials. Freshly prepared weekend cloud kitchen with online pre-ordering.">
-  <meta name="keywords" content="Mangalore Foods, Mangalorean food delivery, Chicken Sukka, Kori Rotti, Coastal Karnataka cuisine, Anjal Fry, Neer Dosa">
+  <meta name="description" content="Order authentic Mangalorean Chicken Ghee Roast, Kori Gassi, Anjal Fry, Neer Dosa, and coastal specials. Freshly prepared weekend cloud kitchen with online pre-ordering.">
+  <meta name="keywords" content="Mangalore Foods, Mangalorean food delivery, Chicken Sukka, Kori Gassi, Coastal Karnataka cuisine, Anjal Fry, Neer Dosa, Appam">
   <meta name="robots" content="index, follow">
 
   <meta property="og:type" content="website">
@@ -232,7 +232,7 @@
       color: var(--accent);
       border-bottom: 2px solid var(--gold);
       padding-bottom: 6px;
-      margin: 30px 0 20px 0;
+      margin: 36px 0 20px 0;
     }
     .menu-grid {
       display: grid;
@@ -248,6 +248,9 @@
       flex-direction: column;
       border-left: 5px solid var(--accent);
       transition: transform 0.2s ease;
+    }
+    .dish-card-veg {
+      border-left: 5px solid var(--veg);
     }
     .dish-card:hover { transform: translateY(-3px); }
     .dish-body {
@@ -268,6 +271,8 @@
       color: var(--primary);
       margin: 0;
     }
+
+    /* DIETARY INDICATORS */
     .indicator-nonveg {
       width: 14px;
       height: 14px;
@@ -285,6 +290,24 @@
       background: var(--nonveg);
       border-radius: 50%;
     }
+    .indicator-veg {
+      width: 14px;
+      height: 14px;
+      border: 1px solid var(--veg);
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .indicator-veg::after {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--veg);
+      border-radius: 50%;
+    }
+
     .dish-desc {
       font-size: 13px;
       color: var(--muted);
@@ -300,25 +323,16 @@
       padding-top: 12px;
       border-top: 1px dashed var(--border);
     }
-    .dish-price {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--accent);
-    }
-    .dish-portion {
-      font-size: 11px;
-      color: var(--muted);
-      display: block;
-    }
     .order-item-btn {
       background: var(--primary);
       color: #ffffff;
       text-decoration: none;
-      padding: 8px 18px;
+      padding: 8px 22px;
       border-radius: 6px;
       font-size: 13px;
       font-weight: bold;
       transition: background 0.2s ease;
+      margin-left: auto;
     }
     .order-item-btn:hover { background: var(--accent); }
 
@@ -516,76 +530,70 @@
         <p>Pre-order before Friday 6:00 PM for Saturday delivery, or Saturday 6:00 PM for Sunday delivery.</p>
       </div>
 
-      <h3 class="menu-category-title">Currently Available</h3>
-      <div class="menu-grid" id="dynamicMenuGrid">
+      <!-- CHICKEN SPECIALS -->
+      <h3 class="menu-category-title">Chicken Specials</h3>
+      <div class="menu-grid">
 
-        <!-- DISH 1 -->
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Kori Gassi</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Authentic Mangalorean chicken curry simmered in fresh coconut milk, Byadgi chillies, and coastal herbs.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Kundapur Chicken Curry</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Aromatic regional curry prepared with slow-roasted spices and traditional Kundapur masala blend.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
         <div class="dish-card">
           <div class="dish-body">
             <div class="dish-header">
               <h3 class="dish-title">Chicken Sukka</h3>
               <div class="indicator-nonveg" title="Non-Vegetarian"></div>
             </div>
-            <p class="dish-desc">Tender chicken morsels slow-cooked with fresh roasted coconut and authentic coastal spices.</p>
+            <p class="dish-desc">Tender chicken morsels slow-cooked with fresh roasted grated coconut and coastal spices.</p>
             <div class="dish-footer">
-              <div>
-                <span class="dish-price">₹280</span>
-                <span class="dish-portion">Serves 1-2 | 350g</span>
-              </div>
               <a href="#orderForm" class="order-item-btn">Order</a>
             </div>
           </div>
         </div>
 
-        <!-- DISH 2 -->
         <div class="dish-card">
           <div class="dish-body">
             <div class="dish-header">
-              <h3 class="dish-title">Anjal Tawa Fry</h3>
+              <h3 class="dish-title">Mangalorean Chicken Curry</h3>
               <div class="indicator-nonveg" title="Non-Vegetarian"></div>
             </div>
-            <p class="dish-desc">Fresh King Fish slice marinated in fiery Byadgi red masala and pan-roasted on a traditional tawa.</p>
+            <p class="dish-desc">Homestyle chicken curry cooked with roasted spices, garlic, and coconut gravy.</p>
             <div class="dish-footer">
-              <div>
-                <span class="dish-price">₹350</span>
-                <span class="dish-portion">1 Large Slice</span>
-              </div>
               <a href="#orderForm" class="order-item-btn">Order</a>
             </div>
           </div>
         </div>
 
-        <!-- DISH 3 -->
         <div class="dish-card">
           <div class="dish-body">
             <div class="dish-header">
-              <h3 class="dish-title">Kori Rotti & Curry</h3>
+              <h3 class="dish-title">Chicken Ghee Roast</h3>
               <div class="indicator-nonveg" title="Non-Vegetarian"></div>
             </div>
-            <p class="dish-desc">Crisp rice wafers served alongside coconut chicken gravy prepared in coastal style.</p>
+            <p class="dish-desc">Fiery, succulent chicken pieces slow-cooked in pure ghee and stone-ground red masala.</p>
             <div class="dish-footer">
-              <div>
-                <span class="dish-price">₹260</span>
-                <span class="dish-portion">Serves 1-2</span>
-              </div>
-              <a href="#orderForm" class="order-item-btn">Order</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- DISH 4 -->
-        <div class="dish-card">
-          <div class="dish-body">
-            <div class="dish-header">
-              <h3 class="dish-title">Neer Dosa (Set of 4)</h3>
-              <div class="indicator-nonveg" style="border-color:#2e7d32;" title="Vegetarian"></div>
-            </div>
-            <p class="dish-desc">Paper-thin, melt-in-mouth rice crepes. The perfect pair for Chicken Sukka and fish curry.</p>
-            <div class="dish-footer">
-              <div>
-                <span class="dish-price">₹80</span>
-                <span class="dish-portion">4 Pieces</span>
-              </div>
               <a href="#orderForm" class="order-item-btn">Order</a>
             </div>
           </div>
@@ -593,22 +601,165 @@
 
       </div>
 
-      <h3 class="menu-category-title" style="margin-top:40px; opacity:0.8;">Coming Soon</h3>
-      <div class="menu-grid" style="opacity: 0.85;">
+      <!-- FISH CURRIES -->
+      <h3 class="menu-category-title">Fish Curries</h3>
+      <div class="menu-grid">
+
         <div class="dish-card">
           <div class="dish-body">
-            <h3 class="dish-title">Mutton Sukka</h3>
-            <p class="dish-desc">Slow-braised mutton with toasted coconut, pepper, and coastal spices.</p>
-            <span style="font-size: 12px; color: var(--accent); font-weight: bold;">Coming Next Weekend</span>
+            <div class="dish-header">
+              <h3 class="dish-title">Mangalorean Fish Curry</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Fresh catch cooked in tangy, spiced coconut gravy infused with raw tamarind and coriander.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
           </div>
         </div>
+
         <div class="dish-card">
           <div class="dish-body">
-            <h3 class="dish-title">Marwai (Clams) Sukka</h3>
-            <p class="dish-desc">Fresh clams tossed with coconut masala and coastal herbs.</p>
-            <span style="font-size: 12px; color: var(--accent); font-weight: bold;">Seasonal Special</span>
+            <div class="dish-header">
+              <h3 class="dish-title">Bangda Curry (Mackerel)</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Traditional mackerel fish curry prepared in red coconut masala and coastal herbs.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
           </div>
         </div>
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Buthai Curry (Sardine)</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Classic coastal sardine fish curry simmered with spicy, sour coconut gravy.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FISH FRY -->
+      <h3 class="menu-category-title">Fish Fry (Tawa Specials)</h3>
+      <div class="menu-grid">
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Anjal Fry (Kingfish)</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Fresh King Fish slice marinated in signature red masala and shallow roasted on a tawa.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Bangda Fry (Mackerel)</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Fresh Mackerel coated with spicy rava and roasted until crisp on the outside.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Kane Fry (Ladyfish)</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Delicate Ladyfish pan-roasted with spicy Byadgi masala coating.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Pomfret Fry</h3>
+              <div class="indicator-nonveg" title="Non-Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Whole Pomfret fish coated in coastal spices and shallow roasted to perfection.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ACCOMPANIMENTS & SIDES -->
+      <h3 class="menu-category-title">Accompaniments & Sides</h3>
+      <div class="menu-grid">
+
+        <div class="dish-card dish-card-veg">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Neer Dosa (Set of 5)</h3>
+              <div class="indicator-veg" title="Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Paper-thin, delicate rice crepes. The classic pairing for chicken and fish curries.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card dish-card-veg">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Boiled Red Rice (Portion)</h3>
+              <div class="indicator-veg" title="Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Nutritious, traditional Mangalorean boiled rice served warm.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card dish-card-veg">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Appam (Set of 2)</h3>
+              <div class="indicator-veg" title="Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Soft, fluffy lace hoppers with crispy edges, cooked fresh for your meal.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card dish-card-veg">
+          <div class="dish-body">
+            <div class="dish-header">
+              <h3 class="dish-title">Shavige (Boiled Rice Noodle 200g)</h3>
+              <div class="indicator-veg" title="Vegetarian"></div>
+            </div>
+            <p class="dish-desc">Handcrafted rice noodles, steamed soft and ideal for soaking up curries.</p>
+            <div class="dish-footer">
+              <a href="#orderForm" class="order-item-btn">Order</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
