@@ -80,7 +80,7 @@
     .nav-container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 12px 20px;
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -88,12 +88,19 @@
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
+    }
+    .brand-logo-img {
+      height: 45px;
+      width: auto;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--gold);
     }
     .brand-title {
       font-family: Georgia, serif;
-      font-size: 22px;
+      font-size: 20px;
       color: var(--gold);
       font-weight: bold;
       margin: 0;
@@ -488,10 +495,11 @@
 </head>
 <body>
 
-  <!-- NAVIGATION HEADER -->
+  <!-- NAVIGATION HEADER WITH DIRECT GOOGLE DRIVE LOGO -->
   <header class="nav-header">
     <div class="nav-container">
       <a href="#" class="brand-logo">
+        <img src="https://lh3.googleusercontent.com/d/1Hnq34qEr8yKE7obFAZwHcAd7GixlBVgE" alt="Mangalore Foods Logo" class="brand-logo-img">
         <div>
           <p class="brand-title">Mangalore Foods</p>
           <p class="brand-tagline-sub">Taste of Coastal Tradition</p>
