@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
   <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
 
-  <!-- GOOGLE FONTS FOR HEADER TAGLINE -->
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
@@ -64,6 +64,7 @@
       line-height: 1.6;
     }
 
+    /* HEADER */
     header.nav-header {
       background-color: var(--primary);
       position: sticky;
@@ -126,6 +127,7 @@
       .brand-tagline-sub { font-size: 10px; }
     }
 
+    /* HERO */
     .hero {
       background: linear-gradient(135deg, rgba(0,43,73,0.92), rgba(183,28,28,0.85)), url('https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
       color: #ffffff;
@@ -177,6 +179,7 @@
     }
     .btn-primary:hover { background: #ffffff; transform: translateY(-2px); }
 
+    /* SCHEDULE BAR */
     .schedule-bar {
       background: var(--primary-dark);
       color: #ffffff;
@@ -315,17 +318,75 @@
     }
     .order-item-btn:hover { background: var(--accent); }
 
-    /* MAP CALCULATOR */
+    /* ORDERING PROCESS STEPS */
+    .steps-wrapper {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      border: 1px solid var(--border);
+      margin: 40px 0 20px 0;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .step-box {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 14px 10px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .step-badge {
+      width: 26px;
+      height: 26px;
+      background: var(--primary);
+      color: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 12px;
+      margin: 0 auto 8px auto;
+    }
+    .step-box p {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.3;
+    }
+
+    /* PROMINENT MAP CALCULATOR BOX */
     .delivery-box {
       background: #ffffff;
       border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      border: 1px solid var(--border);
-      margin: 40px 0;
+      padding: 28px;
+      box-shadow: 0 8px 30px rgba(0, 43, 73, 0.12);
+      border: 2px solid var(--gold);
+      margin: 20px 0 40px 0;
+      position: relative;
+    }
+    .delivery-box-badge {
+      position: absolute;
+      top: -14px;
+      left: 24px;
+      background: var(--primary);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--gold);
     }
     #map {
-      height: 280px;
+      height: 300px;
       width: 100%;
       border-radius: 10px;
       margin: 16px 0;
@@ -371,6 +432,29 @@
     .trust-card h4 { margin: 0 0 4px 0; color: var(--primary); font-size: 15px; }
     .trust-card p { margin: 0; font-size: 12px; color: var(--muted); }
 
+    /* FLOATING WHATSAPP BUTTON */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 14px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s ease;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.05);
+    }
+
     footer {
       background: var(--primary-dark);
       color: #a0aec0;
@@ -401,7 +485,7 @@
 </head>
 <body>
 
-  <!-- HEADER WITH STYLISH TAGLINE -->
+  <!-- HEADER -->
   <header class="nav-header">
     <div class="nav-container">
       <a href="#" class="brand-logo">
@@ -411,7 +495,7 @@
           <p class="brand-tagline-sub">Taste of Coastal Tradition</p>
         </div>
       </a>
-      <a href="#deliveryCalculator" class="nav-btn">Check Delivery</a>
+      <a href="#deliveryCalculator" class="nav-btn">Start Order</a>
     </div>
   </header>
 
@@ -421,7 +505,7 @@
     <h1>A Taste That Takes You Home</h1>
     <p class="hero-subtitle">Authentic, home-style Mangalorean specialties slow-cooked with traditional spices. Freshly prepared for your weekend family lunch.</p>
     <div class="hero-ctas">
-      <a href="#deliveryCalculator" class="btn-primary">🍲 Order Weekend Lunch</a>
+      <a href="#deliveryCalculator" class="btn-primary">🍲 Start Your Lunch Pre-Order</a>
     </div>
   </section>
 
@@ -676,11 +760,51 @@
       </div>
     </section>
 
-    <!-- SMART DELIVERY ZONE & MAP CALCULATOR -->
+    <!-- CLEAR ORDERING STEPS FLOW -->
+    <section class="steps-wrapper">
+      <div class="section-head" style="margin-bottom:12px;">
+        <h2>Simple 7-Step Ordering Journey</h2>
+        <p>Follow these quick steps to order your weekend delicacies</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-box">
+          <div class="step-badge">1</div>
+          <p>Detect Your Location</p>
+        </div>
+        <div class="step-box">
+          <div class="step-badge">2</div>
+          <p>Choose Your Dishes</p>
+        </div>
+        <div class="step-box">
+          <div class="step-badge">3</div>
+          <p>Select Delivery Date & Time</p>
+        </div>
+        <div class="step-box">
+          <div class="step-badge">4</div>
+          <p>Enter Delivery Address</p>
+        </div>
+        <div class="step-box">
+          <div class="step-badge">5</div>
+          <p>Review Your Order</p>
+        </div>
+        <div class="step-box">
+          <div class="step-badge">6</div>
+          <p>Make Payment</p>
+        </div>
+        <div class="step-box">
+          <div class="step-badge">7</div>
+          <p>Receive Confirmation</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTED LOCATION & ORDERING BOX -->
     <section id="deliveryCalculator" class="delivery-box">
+      <span class="delivery-box-badge">Step 1 — Start Here</span>
       <div class="section-head" style="margin-bottom:16px;">
         <h2>Select Delivery Location</h2>
-        <p>Drag the pin on the map or click "Detect My Location" to calculate delivery charge and generate your pre-filled order link.</p>
+        <p>Drag the pin on the map or click "Detect My Location" to verify serviceability and pre-fill your delivery charge.</p>
       </div>
 
       <button class="map-btn" onclick="locateUser()">📍 Detect My Location</button>
@@ -714,6 +838,11 @@
     </section>
 
   </main>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/918310229876?text=Hi%20Mangalore%20Foods,%20I%20have%20a%20question%20about%20placing%20my%20weekend%20order." target="_blank" class="whatsapp-float">
+    <span>💬 Need Help? Chat with Us</span>
+  </a>
 
   <!-- FOOTER -->
   <footer>
